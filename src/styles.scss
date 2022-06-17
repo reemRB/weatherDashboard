@@ -4,15 +4,15 @@
 @import "tailwindcss/utilities";
 
 @mixin font($font-family, $font-file) {
-	@font-face {
-		font-family: $font-family;
-    src: local('☞'+$font-file), local('$font-file'),
-        url($font-file + '.woff2') format('woff2'),
-        url($font-file + '.woff') format('woff');
-		font-weight: normal;
-		font-style: normal;
+  @font-face {
+    font-family: $font-family;
+    src: local('☞' +$font-file), local('$font-file'),
+      url($font-file + '.woff2') format('woff2'),
+      url($font-file + '.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
     font-display: swap;
-	}
+  }
 }
 
 @include font('Gilroy-Regular', './assets/fonts/Gilroy-Regular/Gilroy-Regular');
@@ -20,5 +20,26 @@
 @include font('Gilroy-SemiBold', './assets/fonts/Gilroy-SemiBold/Gilroy-SemiBold');
 @include font('Gilroy-Light', './assets/fonts/Gilroy-Light/Gilroy-Light');
 
-html, body { height: 100%; }
-body { margin: 0; @apply font-regular}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  @apply font-regular
+}
+
+input[type=text] {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  
+  @apply outline-none border border-navy-2 border-opacity-80 rounded-md w-[425px] h-12
+} 
+
+input[type="text"]:hover {
+  @apply border-violet;
+}
+input[type="text"]:focus {
+  @apply border-2 border-violet;
+}
