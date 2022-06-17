@@ -3,9 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard-shell',
   template: `
-    <p>
-      dashboard-shell works!
-    </p>
+   <router-outlet></router-outlet>
+   <router-outlet name="display"></router-outlet>
   `,
   styles: [
   ]

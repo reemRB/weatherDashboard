@@ -1,0 +1,181 @@
+[
+  {
+    "ISO": "NL",
+    "country": "Netherlands",
+    "flag": "../assets/flags/NL.svg",
+    "cities": [
+      {
+        "city": "Amsterdam",
+        "weather": {
+          "month": "May",
+          "data": [
+            {
+              "day": "Monday",
+              "date": 4,
+              "temprature": 10
+            },
+            {
+              "day": "Tuesday",
+              "date": 5,
+              "temprature": 8
+            },
+            {
+              "day": "Wednesday",
+              "date": 6,
+              "temprature": 8
+            },
+            {
+              "day": "Thursday",
+              "date": 7,
+              "temprature": 8
+            },
+            {
+              "day": "Friday",
+              "date": 8,
+              "temprature": 12
+            },
+            {
+              "day": "Saturday",
+              "date": 9,
+              "temprature": 10
+            },
+            {
+              "day": "Sunday",
+              "date": 10,
+              "temprature": 10
+            },
+          ]
+        }
+      },
+      {
+        "city": "Gouda",
+        "weather": {
+          "month": "May",
+          "data": [
+            {
+              "day": "Monday",
+              "date": 4,
+              "temprature": 10
+            },
+            {
+              "day": "Tuesday",
+              "date": 5,
+              "temprature": 8
+            },
+            {
+              "day": "Wednesday",
+              "date": 6,
+              "temprature": 8
+            },
+            {
+              "day": "Thursday",
+              "date": 7,
+              "temprature": 8
+            },
+            {
+              "day": "Friday",
+              "date": 8,
+              "temprature": 12
+            },
+            {
+              "day": "Saturday",
+              "date": 9,
+              "temprature": 10
+            },
+            {
+              "day": "Sunday",
+              "date": 10,
+              "temprature": 10
+            },
+          ]
+        }
+      },
+      {
+        "city": "Rotterdam",
+        "weather": {
+          "month": "May",
+          "data": [
+            {
+              "day": "Monday",
+              "date": 4,
+              "temprature": 10
+            },
+            {
+              "day": "Tuesday",
+              "date": 5,
+              "temprature": 8
+            },
+            {
+              "day": "Wednesday",
+              "date": 6,
+              "temprature": 8
+            },
+            {
+              "day": "Thursday",
+              "date": 7,
+              "temprature": 8
+            },
+            {
+              "day": "Friday",
+              "date": 8,
+              "temprature": 12
+            },
+            {
+              "day": "Saturday",
+              "date": 9,
+              "temprature": 10
+            },
+            {
+              "day": "Sunday",
+              "date": 10,
+              "temprature": 10
+            },
+          ]
+        }
+      },
+      {
+        "city": "Utrecht",
+        "weather": {
+          "month": "May",
+          "data": [
+            {
+              "day": "Monday",
+              "date": 4,
+              "temprature": 10
+            },
+            {
+              "day": "Tuesday",
+              "date": 5,
+              "temprature": 8
+            },
+            {
+              "day": "Wednesday",
+              "date": 6,
+              "temprature": 8
+            },
+            {
+              "day": "Thursday",
+              "date": 7,
+              "temprature": 8
+            },
+            {
+              "day": "Friday",
+              "date": 8,
+              "temprature": 12
+            },
+            {
+              "day": "Saturday",
+              "date": 9,
+              "temprature": 10
+            },
+            {
+              "day": "Sunday",
+              "date": 10,
+              "temprature": 10
+            },
+          ]
+        }
+      },
+    ],
+  }
+]
