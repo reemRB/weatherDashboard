@@ -1,6 +1,6 @@
 
   
-  <section class="relative inline-block ">
+  <section class="relative inline-block " *ngIf="countries$ |async as countries">
     <form [formGroup]="form">
       <div class="flex rounded-2xl p-6 bg-white space-x-4 shadow-xl w-[632px] h-[92px]">
         <img src="assets/images/cloud.svg" alt="cloud">
@@ -26,10 +26,6 @@
       </div>
 
     </form>
-
-    <!-- <div *ngIf="cityInput$ | async as cityInput"> -->
-      <!-- <a [routerLink]="[{outlets: {weather: ['ISO', country.value]}}]"> Click Me</a>    -->
-    <!-- </div> -->
 
   </section>
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Weather } from '../models/countries.interface';
 
 @Component({
   selector: 'app-weather-details',
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherDetailsComponent implements OnInit {
 
-  constructor() { }
+  weatherDetails !: Weather;
+
+  constructor( private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log("ho")
+
+    this.activatedRoute.params.pipe(
+      
+    )
+    
+    
+    // subscribe(resp=>console.log(resp))
+
   }
 
 }

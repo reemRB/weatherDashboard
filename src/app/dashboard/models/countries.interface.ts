@@ -10,8 +10,9 @@ export interface CityData {
   weather: Weather
 }
 
-interface Weather {
+export interface Weather {
   month: string,
+  today:string,
   data: WeatherData[]
 }
 

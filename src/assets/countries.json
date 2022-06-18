@@ -8,6 +8,7 @@
         "city": "amsterdam",
         "weather": {
           "month": "May",
+          "today": "2022-05-04T01:35:32.000Z",
           "data": [
             {
               "day": "Monday",
@@ -51,6 +52,7 @@
         "city": "gouda",
         "weather": {
           "month": "May",
+          "today": "2022-05-04T01:35:32.000Z",
           "data": [
             {
               "day": "Monday",
@@ -94,6 +96,7 @@
         "city": "rotterdam",
         "weather": {
           "month": "May",
+          "today": "2022-05-04T01:35:32.000Z",
           "data": [
             {
               "day": "Monday",
@@ -137,6 +140,7 @@
         "city": "utrecht",
         "weather": {
           "month": "May",
+          "today": "2022-05-04T01:35:32.000Z",
           "data": [
             {
               "day": "Monday",
@@ -187,6 +191,7 @@
         "city": "beirut",
         "weather": {
           "month": "May",
+          "today": "2022-05-04T01:35:32.000Z",
           "data": [
             {
               "day": "Monday",

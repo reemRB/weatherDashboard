@@ -1,9 +1,9 @@
-import { forwardRef } from '@angular/core';
-import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
-import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { async, of } from 'rxjs';
+import { DashboardShellComponent } from '../dashboard-shell.component';
 import { SearchComponent } from './search.component';
 
 
@@ -13,16 +13,21 @@ describe('SearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      
       imports: [
         ReactiveFormsModule,
-        RouterTestingModule,
-        MatSelectModule
-
+        MatSelectModule,
+        RouterTestingModule.withRoutes([
+          {
+            path: 'dashboard',
+            component: DashboardShellComponent,
+          }
+        ]),
       ],
+
       declarations: [SearchComponent],
 
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -39,13 +44,36 @@ describe('SearchComponent', () => {
     expect(component.country.value).toEqual('NL');
   });
 
-  it('should return a boolean', async () => {
-    const el = fixture.nativeElement.querySelector('input');
+  it('should navigate to search on initialization', () => {
+    const route: Router = TestBed.inject(Router);
+    spyOn(route, 'navigate');
+    component.navigate(false);
+    expect(route.navigate).toHaveBeenCalledWith(['./dashboard']);
+  });
 
-    el.value = 'utrecht';
-    el.dispatchEvent(new Event('input'));
+  it('should navigate to weather info after search', async () => {
+    const city = fixture.nativeElement.querySelector('input');
+    city.value = 'utrecht';
+    city.dispatchEvent(new Event('input'));
 
     fixture.detectChanges();
+    
+    await fixture.whenStable().then(() => {
+      const route: Router = TestBed.inject(Router);
+      spyOn(route, 'navigate');
+      component.navigate(true);
+      expect(route.navigate).toHaveBeenCalledWith(['./dashboard', { outlets: { display: ['city', city.value, 'NL'] } }]);
+    });
+  });
+
+  it('should return a boolean', async () => {
+    const city = fixture.nativeElement.querySelector('input');
+
+    city.value = 'utrecht';
+    city.dispatchEvent(new Event('input'));
+
+    fixture.detectChanges();
+    
     await fixture.whenStable().then(() => {
       expect(component.cityInput).toEqual(true);
     });

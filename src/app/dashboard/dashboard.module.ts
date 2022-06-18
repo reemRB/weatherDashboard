@@ -17,9 +17,9 @@ const routes: Routes = [
         component: SearchComponent,
       },
       {
-        path: 'ISO/:iso',
+        path: 'city/:city/:iso',
         component: WeatherDetailsComponent,
-        outlet: 'weather',
+        outlet: 'display',
       },
     ]
   }
