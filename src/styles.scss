@@ -15,10 +15,9 @@
   }
 }
 
-@include font('Gilroy-Regular', './assets/fonts/Gilroy-Regular/Gilroy-Regular');
-@include font('Gilroy-Bold', './assets/fonts/Gilroy-Bold/Gilroy-Bold');
-@include font('Gilroy-SemiBold', './assets/fonts/Gilroy-SemiBold/Gilroy-SemiBold');
-@include font('Gilroy-Light', './assets/fonts/Gilroy-Light/Gilroy-Light');
+@include font('Poppins-Regular', './assets/fonts/PoppinsRegular/Poppins-Regular');
+@include font('Poppins-SemiBold', './assets/fonts/PoppinsSemiBold/Poppins-SemiBold');
+
 
 html,
 body {
@@ -34,7 +33,7 @@ input[type=text] {
   padding-left: 1rem !important;
   padding-right: 1rem !important;
   
-  @apply outline-none border border-navy-2 border-opacity-80 rounded-md w-[425px] h-12
+  @apply outline-none border border-navy-2 border-opacity-10 rounded-md w-[425px] h-12 text-navy-2 font-regular
 } 
 
 input[type="text"]:hover {
@@ -42,4 +41,19 @@ input[type="text"]:hover {
 }
 input[type="text"]:focus {
   @apply border-2 border-violet;
+}
+
+.mat-select{
+  width: 94px !important;
+  height: 48px !important;
+  @apply rounded-md bg-white border border-navy-2 border-opacity-10 font-semi
+ 
+}
+
+.mat-select:focus{
+  @apply border-2 border-violet;
+}
+
+.mat-select-trigger{
+  @apply h-full px-1
 }

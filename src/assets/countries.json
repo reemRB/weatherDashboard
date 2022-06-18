@@ -2,7 +2,7 @@
   {
     "ISO": "NL",
     "country": "Netherlands",
-    "flag": "../assets/flags/NL.svg",
+    "flag": "../assets/flags/Netherlands.svg",
     "cities": [
       {
         "city": "Amsterdam",
@@ -43,7 +43,7 @@
               "day": "Sunday",
               "date": 10,
               "temprature": 10
-            },
+            }
           ]
         }
       },
@@ -86,7 +86,7 @@
               "day": "Sunday",
               "date": 10,
               "temprature": 10
-            },
+            }
           ]
         }
       },
@@ -129,7 +129,7 @@
               "day": "Sunday",
               "date": 10,
               "temprature": 10
-            },
+            }
           ]
         }
       },
@@ -172,10 +172,60 @@
               "day": "Sunday",
               "date": 10,
               "temprature": 10
-            },
+            }
           ]
         }
-      },
-    ],
+      }
+    ]
+  },
+  {
+    "ISO": "LB",
+    "country": "Lebanon",
+    "flag": "../assets/flags/Lebanon.svg",
+    "cities": [
+      {
+        "city": "Beirut",
+        "weather": {
+          "month": "May",
+          "data": [
+            {
+              "day": "Monday",
+              "date": 4,
+              "temprature": 14
+            },
+            {
+              "day": "Tuesday",
+              "date": 5,
+              "temprature": 19
+            },
+            {
+              "day": "Wednesday",
+              "date": 6,
+              "temprature": 21
+            },
+            {
+              "day": "Thursday",
+              "date": 7,
+              "temprature": 17
+            },
+            {
+              "day": "Friday",
+              "date": 8,
+              "temprature": 25
+            },
+            {
+              "day": "Saturday",
+              "date": 9,
+              "temprature": 28
+            },
+            {
+              "day": "Sunday",
+              "date": 10,
+              "temprature": 20
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

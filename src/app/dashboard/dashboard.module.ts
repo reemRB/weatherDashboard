@@ -4,6 +4,8 @@ import { DashboardShellComponent } from './dashboard-shell.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -15,9 +17,9 @@ const routes: Routes = [
         component: SearchComponent,
       },
       {
-        path: 'city/:city',
+        path: 'ISO/:iso',
         component: WeatherDetailsComponent,
-        outlet: 'display',
+        outlet: 'weather',
       },
     ]
   }
@@ -31,6 +33,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    MatSelectModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })

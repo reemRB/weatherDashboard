@@ -1,10 +1,34 @@
 
   
-  <section class="relative inline-block">
-    <div class="flex rounded-2xl p-6 bg-navy-1">
-      <img src="assets/images/cloud.svg" alt="cloud">
-      <input type="text">
-    </div>
-    <a [routerLink]="[{outlets: {display: ['city', 'beirut']}}]"> Click Me</a>
+  <section class="relative inline-block ">
+    <form (ngSubmit)="searchCity()" [formGroup]="form">
+      <div class="flex rounded-2xl p-6 bg-white space-x-4 shadow-xl w-[632px] h-[92px]">
+        <img src="assets/images/cloud.svg" alt="cloud">
+       
+        <mat-select [formControl]="country">
+          
+          <mat-select-trigger *ngFor="let count of countries">
+            <div class="flex space-x-2 px-2 items-center" *ngIf="count.ISO === country.value">
+              <img [src]="count.flag" alt="flag" class="w-7">
+              <p>{{country.value}}</p>
+            </div>
+          </mat-select-trigger>
+
+          <mat-option *ngFor="let count of countries" [value]="count.ISO">
+            <div class="flex space-x-3 items-center text-gray-6">
+              <img [src]='count.flag' alt="" class="w-7">
+              <p>{{count.ISO}}</p>
+            </div>
+          </mat-option>
+        </mat-select>
+        
+        <input type="text" value="" placeholder="Please enter your location...">
+      </div>
+
+    </form>
+    <a [routerLink]="[{outlets: {weather: ['ISO', 'LB']}}]"> Click Me</a>
   </section>
+
+
+
 

@@ -20,15 +20,14 @@ module.exports = {
         },
         violet:"#B5C7FF",
         sun:"#FE9255",
+        white: '#fff'
         
       }
     },
 
     fontFamily: {
-      light: ['Gilroy-Light', 'sans-serif'],
-      bold: ['Gilroy-Bold', 'Times New Roman', 'serif'],
-      semi: ['Gilroy-SemiBold', 'Times New Roman', 'serif'],
-      regular: ['Gilroy-Regular', 'Times New Roman', 'serif']
+      regular: ['Poppins-Regular', 'Times New Roman', 'serif'],
+      semi: ['Poppins-SemiBold', 'Times New Roman', 'serif']
     }
   },
 
