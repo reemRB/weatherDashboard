@@ -5,7 +5,7 @@
     "flag": "../assets/flags/Netherlands.svg",
     "cities": [
       {
-        "city": "Amsterdam",
+        "city": "amsterdam",
         "weather": {
           "month": "May",
           "data": [
@@ -48,7 +48,7 @@
         }
       },
       {
-        "city": "Gouda",
+        "city": "gouda",
         "weather": {
           "month": "May",
           "data": [
@@ -91,7 +91,7 @@
         }
       },
       {
-        "city": "Rotterdam",
+        "city": "rotterdam",
         "weather": {
           "month": "May",
           "data": [
@@ -134,7 +134,7 @@
         }
       },
       {
-        "city": "Utrecht",
+        "city": "utrecht",
         "weather": {
           "month": "May",
           "data": [
@@ -184,7 +184,7 @@
     "flag": "../assets/flags/Lebanon.svg",
     "cities": [
       {
-        "city": "Beirut",
+        "city": "beirut",
         "weather": {
           "month": "May",
           "data": [

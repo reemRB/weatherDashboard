@@ -2,10 +2,10 @@ export interface CountriesData {
   ISO: string,
   country: string,
   flag: string,
-  cities: CitiesData[]
+  cities: CityData[]
 }
 
-interface CitiesData {
+export interface CityData {
   city: string,
   weather: Weather
 }

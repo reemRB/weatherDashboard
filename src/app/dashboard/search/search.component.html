@@ -1,7 +1,7 @@
 
   
   <section class="relative inline-block ">
-    <form (ngSubmit)="searchCity()" [formGroup]="form">
+    <form [formGroup]="form">
       <div class="flex rounded-2xl p-6 bg-white space-x-4 shadow-xl w-[632px] h-[92px]">
         <img src="assets/images/cloud.svg" alt="cloud">
        
@@ -22,11 +22,15 @@
           </mat-option>
         </mat-select>
         
-        <input type="text" value="" placeholder="Please enter your location...">
+        <input type="text" value="" placeholder="Please enter your location..." formControlName="city">
       </div>
 
     </form>
-    <a [routerLink]="[{outlets: {weather: ['ISO', 'LB']}}]"> Click Me</a>
+
+    <!-- <div *ngIf="cityInput$ | async as cityInput"> -->
+      <!-- <a [routerLink]="[{outlets: {weather: ['ISO', country.value]}}]"> Click Me</a>    -->
+    <!-- </div> -->
+
   </section>
 
 
