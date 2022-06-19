@@ -1,0 +1,14 @@
+@media (max-width:639px) {
+  .infoResp {
+    @apply flex justify-between text-xl mb-4 mx-4
+  }
+}
+
+
+@media (max-width: 450px) { 
+
+  .infoResp {
+    @apply flex justify-between text-sm mb-4 mx-4
+  }
+
+ }

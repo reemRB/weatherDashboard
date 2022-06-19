@@ -10,10 +10,12 @@
     </h1>
   </div>
 
-  <div class="flex justify-between">
-    <div *ngFor="let weather of details.data" class="font-semi space-y-3">
-      <p class="text-primary opacity-60 text-xs">{{weather.day}}</p>
-      <p class="text-white text-2xl">{{weather.temprature}}<sup style="font-size: 14px; position: relative; vertical-align: super; top: -3px;">&deg;C</sup></p>
+  <div class="sm:flex sm:justify-between">
+    <div *ngFor="let weather of details.data" class="font-semi sm:space-y-3">
+      <div class="infoResp">
+        <p class="text-primary opacity-60 sm:text-xs">{{weather.day}}</p>
+        <p class="text-white sm:text-2xl">{{weather.temprature}}<sup style="font-size: 14px; position: relative; vertical-align: super; top: -3px;">&deg;C</sup></p>
+      </div>
     </div>
   </div>
 
