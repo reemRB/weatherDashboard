@@ -19,7 +19,8 @@ export class WeatherDetailsComponent implements OnInit {
 
     this.weatherDetails$ = this.activatedRoute.params.pipe(
       switchMap(resp=> this.service.getCityInfo(resp['iso'], resp['city'])),
-      pluck('weather')
+      pluck('weather'),
+      tap(resp=> this.service.getTemprature(resp.data[0].temprature))
       )
   }
 

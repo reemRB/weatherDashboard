@@ -23,6 +23,8 @@ export class SearchComponent implements OnInit {
 
   cityCheck !: boolean;
 
+  searching = false
+
   constructor(fb: FormBuilder, private router: Router, private service: DashboardService) {
     this.form = fb.group({
       city: ["", [Validators.required]]
@@ -31,14 +33,17 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.navigate(false);
-    this.findCity().subscribe();
+    this.findCity().subscribe(_=>this.searching = false);
   }
 
 
   findCity(): Observable<boolean> {
+   
     return merge(
+      
       this.country_control.valueChanges.pipe(startWith(this.country_control.value)),
       this.form.controls['city'].valueChanges.pipe(
+        tap(_=> this.searching = true),
         debounceTime(500),
         distinctUntilChanged())
     ).pipe(

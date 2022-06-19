@@ -1,17 +1,21 @@
 import { Injectable } from "@angular/core";
-import { map, Observable, of, pluck } from "rxjs";
+import { BehaviorSubject, map, Observable, of, Subject } from "rxjs";
 
 // @ts-ignore
 import * as countriesData from '../../../../assets/countries.json';
-import { CityData, CountriesData, Weather } from "../../artifacts/models/countries.interface";
+import { CityData, CountriesData } from "../../artifacts/models/countries.interface";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class DashboardService {
-  constructor() { }
+ 
+  private temprature = new BehaviorSubject<number>(50);
+  temprature$ = this.temprature.asObservable();
 
+
+  constructor() { }
 
   getCityInfo(iso:string, cityInput: string=''): Observable<CityData> {
     return of(countriesData.default).pipe(
@@ -22,5 +26,10 @@ export class DashboardService {
 
   getCountries(): Observable<CountriesData[]> {
     return of(countriesData.default);
+  }
+
+
+  getTemprature(temp: number) {
+    this.temprature.next(temp)
   }
 }

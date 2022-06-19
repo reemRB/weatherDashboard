@@ -13,37 +13,37 @@
             {
               "day": "Monday",
               "date": 4,
-              "temprature": 10
+              "temprature": 40
             },
             {
               "day": "Tuesday",
               "date": 5,
-              "temprature": 8
+              "temprature": 20
             },
             {
               "day": "Wednesday",
               "date": 6,
-              "temprature": 8
+              "temprature": 21
             },
             {
               "day": "Thursday",
               "date": 7,
-              "temprature": 8
+              "temprature": 38
             },
             {
               "day": "Friday",
               "date": 8,
-              "temprature": 12
+              "temprature": 32
             },
             {
               "day": "Saturday",
               "date": 9,
-              "temprature": 10
+              "temprature": 25
             },
             {
               "day": "Sunday",
               "date": 10,
-              "temprature": 10
+              "temprature": 26
             }
           ]
         }
@@ -57,32 +57,32 @@
             {
               "day": "Monday",
               "date": 4,
-              "temprature": 10
+              "temprature": -40
             },
             {
               "day": "Tuesday",
               "date": 5,
-              "temprature": 8
+              "temprature": -20
             },
             {
               "day": "Wednesday",
               "date": 6,
-              "temprature": 8
+              "temprature": -10
             },
             {
               "day": "Thursday",
               "date": 7,
-              "temprature": 8
+              "temprature": 0
             },
             {
               "day": "Friday",
               "date": 8,
-              "temprature": 12
+              "temprature": -30
             },
             {
               "day": "Saturday",
               "date": 9,
-              "temprature": 10
+              "temprature": 15
             },
             {
               "day": "Sunday",
