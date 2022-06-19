@@ -41,7 +41,7 @@ describe('SearchComponent', () => {
   });
 
   it('assign default value of country to NL', () => {
-    expect(component.country.value).toEqual('NL');
+    expect(component.country_control.value).toEqual('NL');
   });
 
   it('should navigate to search on initialization', () => {
@@ -69,13 +69,13 @@ describe('SearchComponent', () => {
   it('should return a boolean', async () => {
     const city = fixture.nativeElement.querySelector('input');
 
-    city.value = 'utrecht';
+    city.value = 'amsterdam';
     city.dispatchEvent(new Event('input'));
 
     fixture.detectChanges();
     
     await fixture.whenStable().then(() => {
-      expect(component.cityInput).toEqual(true);
+      expect(component.cityCheck).toEqual(true);
     });
   });
 

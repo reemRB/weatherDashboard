@@ -12,14 +12,13 @@ module.exports = {
     extend: {
 
       colors:{
-       
+        primary:"#08153E",
+        
         sea:"#9BDBFF",
-        navy:{
-          1: "#102F7E",
-          2: "#08153E"
-        },
+        navy: "#102F7E",
         violet:"#B5C7FF",
         sun:"#FE9255",
+        danger: "#D50000",
         white: '#fff'
         
       }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Weather } from '../models/countries.interface';
+import { Observable, pluck, switchMap, tap } from 'rxjs';
+import { CityData, Weather } from '../artifacts/models/countries.interface';
+import { DashboardService } from '../artifacts/services/dashboard.service';
 
 @Component({
   selector: 'app-weather-details',
@@ -9,19 +11,16 @@ import { Weather } from '../models/countries.interface';
 })
 export class WeatherDetailsComponent implements OnInit {
 
-  weatherDetails !: Weather;
+  weatherDetails$ !: Observable<Weather>;
 
-  constructor( private activatedRoute: ActivatedRoute) { }
+  constructor( private activatedRoute: ActivatedRoute, private service: DashboardService) { }
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.pipe(
-      
-    )
-    
-    
-    // subscribe(resp=>console.log(resp))
-
+    this.weatherDetails$ = this.activatedRoute.params.pipe(
+      switchMap(resp=> this.service.getCountryInfo(resp['iso'], resp['city'])),
+      pluck('weather')
+      )
   }
 
 }

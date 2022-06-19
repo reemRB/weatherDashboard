@@ -1,1 +1,21 @@
-<div>wonderful</div>
+<section *ngIf="weatherDetails$ | async as details" class="text-center mt-12">
+  <p class="text-primary font-semi opacity-60">
+    {{ details.today | date:'MMM d' }} - {{ details.data[details.data.length-1].date }} {{ details.today | date:'y' }}
+  </p>
+
+  <div class="relative inline-block">
+    <h1 class="text-white font-semi text-[120px] ml-6">
+      {{details.data[0].temprature}}<sup
+        style="font-size:24px; position: relative; vertical-align: super; top: -30px;">&deg;C</sup>
+    </h1>
+  </div>
+
+  <div class="flex justify-between">
+    <div *ngFor="let weather of details.data" class="font-semi space-y-3">
+      <p class="text-primary opacity-60 text-xs">{{weather.day}}</p>
+      <p class="text-white text-2xl">{{weather.temprature}}<sup style="font-size: 14px; position: relative; vertical-align: super; top: -3px;">&deg;C</sup></p>
+    </div>
+  </div>
+
+
+</section>

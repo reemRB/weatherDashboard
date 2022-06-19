@@ -2,29 +2,37 @@
   
   <section class="relative inline-block " *ngIf="countries$ |async as countries">
     <form [formGroup]="form">
-      <div class="flex rounded-2xl p-6 bg-white space-x-4 shadow-xl w-[632px] h-[92px]">
+      <div class="flex rounded-2xl p-6 bg-white space-x-4 shadow-xl w-[632px] h-24">
         <img src="assets/images/cloud.svg" alt="cloud">
        
-        <mat-select [formControl]="country">
+        <mat-select [formControl]="country_control">
           
-          <mat-select-trigger *ngFor="let count of countries">
-            <div class="flex space-x-2 px-2 items-center" *ngIf="count.ISO === country.value">
-              <img [src]="count.flag" alt="flag" class="w-7">
-              <p>{{country.value}}</p>
+          <mat-select-trigger *ngFor="let country of countries">
+            <div class="flex space-x-2 px-2 items-center" *ngIf="country.ISO === country_control.value">
+              <img [src]="country.flag" alt="flag" class="w-7">
+              <p>{{country_control.value}}</p>
             </div>
           </mat-select-trigger>
 
-          <mat-option *ngFor="let count of countries" [value]="count.ISO">
+          <mat-option *ngFor="let country of countries" [value]="country.ISO">
             <div class="flex space-x-3 items-center text-gray-6">
-              <img [src]='count.flag' alt="" class="w-7">
-              <p>{{count.ISO}}</p>
+              <img [src]='country.flag' alt="" class="w-7">
+              <p>{{country.ISO}}</p>
             </div>
           </mat-option>
+          
         </mat-select>
         
-        <input type="text" value="" placeholder="Please enter your location..." formControlName="city">
-      </div>
+        <div>
+          <input type="text" value="" placeholder="Please enter your location..." formControlName="city">
+          <ng-container *ngIf="!this.cityCheck">
+            <p class="text-danger text-xs font-regular m-1">City not found</p>
+          </ng-container>
+        </div>
 
+        
+      </div>
+      
     </form>
 
   </section>

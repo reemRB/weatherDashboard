@@ -33,7 +33,7 @@ input[type=text] {
   padding-left: 1rem !important;
   padding-right: 1rem !important;
   
-  @apply outline-none border border-navy-2 border-opacity-10 rounded-md w-[425px] h-12 text-navy-2 font-regular
+  @apply outline-none border border-primary border-opacity-10 rounded-md w-[425px] h-12 text-primary font-regular
 } 
 
 input[type="text"]:hover {
@@ -46,7 +46,7 @@ input[type="text"]:focus {
 .mat-select{
   width: 94px !important;
   height: 48px !important;
-  @apply rounded-md bg-white border border-navy-2 border-opacity-10 font-semi
+  @apply rounded-md bg-white border border-primary border-opacity-10 font-semi
  
 }
 
