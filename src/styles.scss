@@ -30,17 +30,17 @@ body {
 }
 
 input[type=text] {
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  padding-left: 0.875rem !important;
+  padding-right: 2.4rem !important;
   
-  @apply outline-none border border-primary border-opacity-10 rounded-md w-[425px] h-12 text-primary font-regular
+  @apply outline-none text-sm border border-primary border-opacity-10 rounded-md w-[425px] h-12 text-primary font-regular
 } 
 
 input[type="text"]:hover {
   @apply border-violet;
 }
 input[type="text"]:focus {
-  @apply border-2 border-violet;
+  @apply border-2 border-violet ;
 }
 
 .mat-select{

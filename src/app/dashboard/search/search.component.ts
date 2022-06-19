@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
         distinctUntilChanged())
     ).pipe(
       untilDestroyed(this),
-      switchMap(_ => this.service.getCountryInfo(this.country_control.value, this.form.get('city')?.value)),
+      switchMap(_ => this.service.getCityInfo(this.country_control.value, this.form.get('city')?.value)),
       map((output) => !!output),
       tap(resp => {
         this.cityCheck = resp

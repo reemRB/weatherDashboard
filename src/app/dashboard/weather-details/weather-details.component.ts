@@ -18,7 +18,7 @@ export class WeatherDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.weatherDetails$ = this.activatedRoute.params.pipe(
-      switchMap(resp=> this.service.getCountryInfo(resp['iso'], resp['city'])),
+      switchMap(resp=> this.service.getCityInfo(resp['iso'], resp['city'])),
       pluck('weather')
       )
   }

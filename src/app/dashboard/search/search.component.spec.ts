@@ -3,6 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CityData, CountriesData } from '../artifacts/models/countries.interface';
+import { DashboardService } from '../artifacts/services/dashboard.service';
 import { DashboardShellComponent } from '../dashboard-shell.component';
 import { SearchComponent } from './search.component';
 
@@ -39,6 +41,16 @@ describe('SearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should return all the countries data', inject([DashboardService], (countryData:any) => {
+    countryData.getCountries().subscribe((result:CountriesData[]) => expect(result.length).toBeGreaterThan(0)); 
+  }));
+
+
+  it('should return the weather info of a specific city', inject([DashboardService], (countryData:any) => {
+    countryData.getCityInfo('NL','utrecht').subscribe((result:CityData) => expect(result).toBeTruthy()); 
+  }));
 
   it('assign default value of country to NL', () => {
     expect(component.country_control.value).toEqual('NL');
