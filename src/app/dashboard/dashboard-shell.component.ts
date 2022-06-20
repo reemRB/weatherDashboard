@@ -6,7 +6,7 @@ import { DashboardService } from './artifacts/services/dashboard.service';
   selector: 'app-dashboard-shell',
   template: `
 
-    <section class="h-full p-8 flex items-center justify-center overflow-auto" [ngStyle]="temprature? backgroundStyle : defaultBackground">
+    <section class="h-full p-8 flex items-center justify-center overflow-auto" [ngStyle]="temprature<40? backgroundStyle : defaultBackground">
       
       <div>
         <router-outlet></router-outlet>
@@ -18,17 +18,6 @@ import { DashboardService } from './artifacts/services/dashboard.service';
   `,
   styles: [
     `
-    .changeColor{
-      background: linear-gradient(130.54deg, #102F7E 0%, #0C8DD6 0%, #1AA0EC 0%, #60C6FF 0%, #9BDBFF -33.02%, #B4DEDA 52.01%, #FFD66B 137.04%, #FFC178 0%, #FE9255 0%)
-    }
-
-    /* section{
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
-        linear-gradient(130.54deg, 
-          #102F7E -11.47%, #0C8DD6 3.95%, #1AA0EC 19.37%, #60C6FF 34.78%, #9BDBFF 50.19%, #B4DEDA 65.61%, 
-          #FFD66B 81.02%, #FFC178 96.44%, 
-          #FE9255 111.85%);
-    } */
     `
   ]
 })
