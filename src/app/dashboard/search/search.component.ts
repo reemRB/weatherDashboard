@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { catchError, debounceTime, distinctUntilChanged, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, merge, Observable, of, startWith, switchMap, tap } from 'rxjs';
 import { DashboardService } from '../artifacts/services/dashboard.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
@@ -33,17 +33,17 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.navigate(false);
-    this.findCity().subscribe(_=>this.searching = false);
+    this.findCity().subscribe(_ => this.searching = false);
   }
 
 
   findCity(): Observable<boolean> {
-   
+
     return merge(
-      
+
       this.country_control.valueChanges.pipe(startWith(this.country_control.value)),
       this.form.controls['city'].valueChanges.pipe(
-        tap(_=> this.searching = true),
+        tap(_ => this.searching = true),
         debounceTime(500),
         distinctUntilChanged())
     ).pipe(
@@ -54,15 +54,14 @@ export class SearchComponent implements OnInit {
         this.cityCheck = resp
         this.navigate(resp)
       }),
-      catchError((error) => of(error)),
     );
   }
 
 
   navigate(output: boolean) {
-    if (output){
+    if (output) {
       this.router.navigate(['./dashboard', { outlets: { display: ['city', this.form.get('city')?.value, this.country_control.value] } }]);
-    }else {
+    } else {
       this.router.navigate(['./dashboard']);
     }
   }
