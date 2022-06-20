@@ -1,7 +1,8 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { map } from 'rxjs';
 import { DashboardService } from './artifacts/services/dashboard.service';
-
+@UntilDestroy()
 @Component({
   selector: 'app-dashboard-shell',
   template: `
@@ -32,6 +33,7 @@ export class DashboardShellComponent implements OnInit, AfterViewChecked {
   
   ngAfterViewChecked(): void {
     this.service.temprature$.pipe(
+      untilDestroyed(this),
       map(resp => this.temprature = resp),
     ).subscribe(resp=> console.log(resp));
     this.cdRef.detectChanges();
