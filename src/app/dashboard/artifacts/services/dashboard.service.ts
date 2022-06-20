@@ -11,6 +11,7 @@ import { CityData, CountriesData } from "../../artifacts/models/countries.interf
 
 export class DashboardService {
  
+  // private temprature = new Subject<number>();
   private temprature = new BehaviorSubject<number>(50);
   temprature$ = this.temprature.asObservable();
 

@@ -22,4 +22,11 @@ describe('DashboardShellComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return an initial value 50', async () => {
+    fixture.detectChanges();
+    await fixture.whenStable().then(() => {
+      expect(component.temprature).toEqual(50);
+    });
+  });
 });
